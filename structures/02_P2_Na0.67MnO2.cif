@@ -1,0 +1,56 @@
+data_P2_Na0.67MnO2
+_chemical_name_common                  'P2-type Na0.67MnO2 prototype'
+_chemical_formula_sum                  'Na0.67 Mn O2'
+_symmetry_space_group_name_H-M         'P 63/m m c'
+_symmetry_Int_Tables_number            194
+
+_cell_length_a                         2.8800
+_cell_length_b                         2.8800
+_cell_length_c                         11.1600
+_cell_angle_alpha                      90.0000
+_cell_angle_beta                       90.0000
+_cell_angle_gamma                      120.0000
+_cell_volume                           80.19
+_cell_formula_units_Z                  2
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+  '-y, x-y, z'
+  '-x+y, -x, z'
+  '-x, -y, z+1/2'
+  'y, -x+y, z+1/2'
+  'x-y, x, z+1/2'
+  '-y, -x, -z'
+  '-x+y, y, -z'
+  'x, x-y, -z'
+  'y, x, -z+1/2'
+  'x-y, -y, -z+1/2'
+  '-x, -x+y, -z+1/2'
+  '-x, -y, -z'
+  'y, -x+y, -z'
+  'x-y, x, -z'
+  'x, y, -z+1/2'
+  '-y, x-y, -z+1/2'
+  '-x+y, -x, -z+1/2'
+  'y, x, z'
+  'x-y, -y, z'
+  '-x, -x+y, z'
+  '-y, -x, z+1/2'
+  '-x+y, y, z+1/2'
+  'x, x-y, z+1/2'
+
+loop_
+  _atom_site_label
+  _atom_site_type_symbol
+  _atom_site_symmetry_multiplicity
+  _atom_site_Wyckoff_symbol
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  _atom_site_B_iso_or_equiv
+  Mn1  Mn 2 a 0.00000 0.00000 0.00000 1.0000 0.40
+  O1   O  4 f 0.33333 0.66667 0.09200 1.0000 0.60
+  Na_e Na 2 d 0.66667 0.33333 0.25000 0.4400 1.20
+  Na_f Na 2 b 0.00000 0.00000 0.25000 0.2300 1.20
