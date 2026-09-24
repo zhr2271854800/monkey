@@ -1,182 +1,210 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="mcai-preview-error" code="503" content="开发环境 fa78b44aae55432f 与服务端的连接已断开，可能已经休眠，请在 MonkeyCode-AI 平台打开该任务界面，以唤醒开发环境。" data-request-id="RL-edceef6603bbcb7864bb4e844b10a86f"/>
-    <title>503 开发环境连接失败</title>
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+:root {
+  --ink: #1c2430;
+  --muted: #5c6570;
+  --paper: #f7f4ee;
+  --card: #fffaf3;
+  --line: #e2d8c8;
+  --o3: #1d4e89;
+  --p2: #2d6a4f;
+  --accent: #b8860b;
+  --max: 860px;
+}
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f5f6fa;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #1a1a2e;
-        }
+* { box-sizing: border-box; }
 
-        .card {
-            width: 100%;
-            max-width: 720px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-        }
+html { scroll-behavior: smooth; }
 
-        .card-header {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            padding: 32px 36px 28px;
-            color: #fff;
-        }
+body {
+  margin: 0;
+  font-family: "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, #efe4c8 0%, transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, #d7e6ea 0%, transparent 50%),
+    var(--paper);
+  line-height: 1.75;
+  font-size: 16px;
+}
 
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #fff;
-            animation: pulse 1.6s ease-in-out infinite;
-        }
+.hero {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 56px 24px 28px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
 
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.35;
-            }
-        }
+.kicker {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
 
-        .status-code {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1;
-            letter-spacing: -2px;
-        }
+h1 {
+  font-size: 32px;
+  line-height: 1.3;
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-weight: 800;
+}
 
-        .status-text {
-            margin-top: 6px;
-            font-size: 20px;
-            font-weight: 800;
-            opacity: 0.9;
-        }
+.lead {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
 
-        .card-body {
-            padding: 28px 36px 32px;
-        }
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 0;
+}
 
-        .reason {
-            font-size: 15px;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
+.toc a {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
 
-        .meta-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
+.toc a:hover {
+  background: var(--o3);
+  color: #fff;
+  border-color: var(--o3);
+  transform: translateY(-1px);
+}
 
-        .meta-table tr + tr td {
-            border-top: 1px solid #f0f0f0;
-        }
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+}
 
-        .meta-table td {
-            padding: 9px 0;
-            vertical-align: top;
-            line-height: 20px;
-        }
+section {
+  margin-bottom: 48px;
+  scroll-margin-top: 30px;
+}
 
-        .meta-table td:first-child {
-            width: 110px;
-            color: #999;
-            font-weight: 500;
-            white-space: nowrap;
-        }
+h2 {
+  font-size: 22px;
+  color: var(--o3);
+  border-left: 4px solid var(--accent);
+  padding-left: 12px;
+  margin: 36px 0 18px;
+  font-weight: 700;
+}
 
-        .meta-table td:last-child, code {
-            color: #333;
-            word-break: break-all;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.7rem;
-        }
+h3 {
+  font-size: 17px;
+  color: var(--ink);
+  margin: 0 0 10px;
+  font-weight: 700;
+}
 
-        .card-footer {
-            padding: 18px 36px;
-            font-size: 12px;
-            color: #bbb;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            line-height: 20px;
-        }
+p {
+  margin: 0 0 16px;
+  color: #2c3848;
+}
 
-        .align-right {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+ul, ol {
+  margin: 0 0 20px 24px;
+  padding: 0;
+}
 
-        .shield-icon svg {
-            opacity: 0.4;
-        }
+li {
+  margin-bottom: 8px;
+  color: #2c3848;
+}
 
-        .mcai-link {
-            color: brown;
-            text-decoration: none;
-        }
-        .mcai-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-<div class="card" id="mcai-preview-error-card">
-    <div class="card-header">
-        <div class="status-code">503</div>
-        <div class="status-text">开发环境连接失败</div>
-    </div>
+strong {
+  color: var(--ink);
+  font-weight: 700;
+}
 
-    <div class="card-body">
-        <p class="reason">开发环境 fa78b44aae55432f 与服务端的连接已断开，可能已经休眠，请在 MonkeyCode-AI 平台打开该任务界面，以唤醒开发环境。</p>
+.grid {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0;
+}
 
-        <table class="meta-table">
-            <tr>
-                <td>目标站点</td>
-                <td>8000@fa78b44aae55432f</td>
-            </tr>
-            <tr>
-                <td>目标路径</td>
-                <td>/style.css</td>
-            </tr>
-            <tr>
-                <td>请求时间</td>
-                <td>2026-09-24 13:30:08 UTC</td>
-            </tr>
-        </table>
-    </div>
+.grid.two {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
 
-    <div class="card-footer">
-        <code>
-            Request ID:
-            <span onclick="prompt('此 Request ID 可复制给技术支持人员用于问题排查。', 'RL-edceef6603bbcb7864bb4e844b10a86f')"
-                  style="text-decoration: underline; cursor: pointer">
-                RL-edceef6603bbcb7864bb4e844b10a86f
-            </span>
-        </code>
-        <span class="align-right">
-            <a class="mcai-link" target="_blank" href="https://monkeycode-ai.com/console/tasks">MonkeyCode-AI</a>
-            <span style="color: brown"> 在线预览</span>
-        </span>
-    </div>
-</div>
-</body>
-</html>
+article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+figure {
+  margin: 24px 0;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+
+figcaption {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 16px 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  margin: 16px 0;
+}
+
+code {
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--o3);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+footer {
+  max-width: var(--max);
+  margin: 40px auto 0;
+  padding: 30px 24px 50px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
