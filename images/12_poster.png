@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="mcai-preview-error" code="503" content="开发环境 fa78b44aae55432f 与服务端的连接已断开，可能已经休眠，请在 MonkeyCode-AI 平台打开该任务界面，以唤醒开发环境。" data-request-id="RL-31f53c33beaf6fb4b1455acb5390dcc0"/>
+    <title>503 开发环境连接失败</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f6fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a2e;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 720px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            padding: 32px 36px 28px;
+            color: #fff;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #fff;
+            animation: pulse 1.6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.35;
+            }
+        }
+
+        .status-code {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .status-text {
+            margin-top: 6px;
+            font-size: 20px;
+            font-weight: 800;
+            opacity: 0.9;
+        }
+
+        .card-body {
+            padding: 28px 36px 32px;
+        }
+
+        .reason {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .meta-table tr + tr td {
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .meta-table td {
+            padding: 9px 0;
+            vertical-align: top;
+            line-height: 20px;
+        }
+
+        .meta-table td:first-child {
+            width: 110px;
+            color: #999;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .meta-table td:last-child, code {
+            color: #333;
+            word-break: break-all;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.7rem;
+        }
+
+        .card-footer {
+            padding: 18px 36px;
+            font-size: 12px;
+            color: #bbb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            line-height: 20px;
+        }
+
+        .align-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .shield-icon svg {
+            opacity: 0.4;
+        }
+
+        .mcai-link {
+            color: brown;
+            text-decoration: none;
+        }
+        .mcai-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="card" id="mcai-preview-error-card">
+    <div class="card-header">
+        <div class="status-code">503</div>
+        <div class="status-text">开发环境连接失败</div>
+    </div>
+
+    <div class="card-body">
+        <p class="reason">开发环境 fa78b44aae55432f 与服务端的连接已断开，可能已经休眠，请在 MonkeyCode-AI 平台打开该任务界面，以唤醒开发环境。</p>
+
+        <table class="meta-table">
+            <tr>
+                <td>目标站点</td>
+                <td>8000@fa78b44aae55432f</td>
+            </tr>
+            <tr>
+                <td>目标路径</td>
+                <td>/images/12_poster.png</td>
+            </tr>
+            <tr>
+                <td>请求时间</td>
+                <td>2026-09-24 13:30:22 UTC</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card-footer">
+        <code>
+            Request ID:
+            <span onclick="prompt('此 Request ID 可复制给技术支持人员用于问题排查。', 'RL-31f53c33beaf6fb4b1455acb5390dcc0')"
+                  style="text-decoration: underline; cursor: pointer">
+                RL-31f53c33beaf6fb4b1455acb5390dcc0
+            </span>
+        </code>
+        <span class="align-right">
+            <a class="mcai-link" target="_blank" href="https://monkeycode-ai.com/console/tasks">MonkeyCode-AI</a>
+            <span style="color: brown"> 在线预览</span>
+        </span>
+    </div>
+</div>
+</body>
+</html>

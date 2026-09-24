@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>钠电入门：O3、P2、八面体、三棱柱与姜-泰勒</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <p class="kicker">钠离子电池 · 层状氧化物正极</p>
+    <h1>O3、P2、八面体、三棱柱</h1>
+    <p class="lead">把 Delmas 命名法拆开看：字母写的是钠离子坐在什么笼子里，数字写的是过渡金属氧层重复几层才回到自己。后面补上姜-泰勒：为什么 Mn<sup>3+</sup>、Fe<sup>4+</sup> 会把八面体拉歪，以及掺杂怎样剪断这场协同畸变。</p>
+    <nav class="toc">
+      <a href="#formula">层状骨架</a>
+      <a href="#polyhedra">两种笼子</a>
+      <a href="#delmas">命名法</a>
+      <a href="#o3">O3</a>
+      <a href="#p2">P2</a>
+      <a href="#hop">扩散窗口</a>
+      <a href="#phase">相变</a>
+      <a href="#compare">对照表</a>
+      <a href="#period">为何 2 与 3</a>
+      <a href="#cft">配位场</a>
+      <a href="#jt">姜-泰勒</a>
+      <a href="#dope">掺杂</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="formula">
+      <h2>1. 先记住化学式</h2>
+      <p>钠电最常见的一类正极是层状过渡金属氧化物，通式写成 <strong>Na<sub>x</sub>TMO<sub>2</sub></strong>。TM 是 Ni、Fe、Mn、Cu、Ti 这一类过渡金属。晶体像千层饼：一层刚性的 TMO<sub>2</sub> 板，一层可以进出的钠。</p>
+      <figure>
+        <img src="images/10_formula.png" alt="NaxTMO2 层状骨架示意" />
+        <figcaption>图 1 · 层状正极的三块积木：TMO<sub>2</sub> 骨架、Na 层、氧堆积方式。</figcaption>
+      </figure>
+      <ul>
+        <li><strong>容量</strong>取决于能可逆脱出多少钠。</li>
+        <li><strong>倍率</strong>取决于钠在层里怎么走。</li>
+        <li><strong>寿命</strong>取决于脱钠后层会不会滑、会不会裂。</li>
+      </ul>
+      <p>过渡金属几乎总是待在氧八面体里。真正用来给材料起名的，是<strong>钠</strong>的配位环境，以及氧层怎么摞。</p>
+    </section>
+
+    <section id="polyhedra">
+      <h2>2. 八面体和三棱柱：钠的两种笼子</h2>
+      <p>六个氧围住一个钠，可以围成两种几何体。这就是 Delmas 记号里的字母 <strong>O</strong> 和 <strong>P</strong>。</p>
+      <figure>
+        <img src="images/01_polyhedra.png" alt="八面体与三棱柱三维对比" />
+        <figcaption>图 2 · 黄球是 Na<sup>+</sup>，红球是 O<sup>2-</sup>。左边八面体，右边三棱柱，都是 NaO<sub>6</sub>。</figcaption>
+      </figure>
+      <div class="grid two">
+        <article>
+          <h3>O · Octahedral · 八面体</h3>
+          <p>6 个顶点、8 个等边三角形面、12 条棱。上下两层氧<strong>错开</strong>，钠坐在交错空隙的中心。锂电里的 LiCoO<sub>2</sub> 也是这种笼子。</p>
+        </article>
+        <article>
+          <h3>P · Prismatic · 三棱柱</h3>
+          <p>上下两个三角形、侧面三个矩形。上下两层氧<strong>正对</strong>，钠坐在对齐空隙的中心。钠离子半径比锂大，这种更开阔的笼子在钠电里特别常见。</p>
+        </article>
+      </div>
+      <p>两种笼子的关键差别不在顶点数，而在<strong>钠离开时要穿过哪一面</strong>。</p>
+      <figure>
+        <img src="images/02_hop_windows.png" alt="八面体面共享窗口与三棱柱矩形窗口" />
+        <figcaption>图 3 · 八面体只能从三角形面钻出去；三棱柱可以从更宽的矩形侧面钻到隔壁笼子。</figcaption>
+      </figure>
+    </section>
+
+    <section id="delmas">
+      <h2>3. Delmas 命名法</h2>
+      <p>1980 年前后，Claude Delmas 给层状碱金属氧化物定了一套记号：<strong>一个字母 + 一个数字</strong>。钠电论文里的 O3、P2、P3、O2，全部来自这套规则。</p>
+      <figure>
+        <img src="images/05_delmas.png" alt="Delmas 命名法示意图" />
+        <figcaption>图 4 · 字母看钠配位，数字看 TMO<sub>2</sub> 层重复周期。不要把数字理解成钠的配位数。</figcaption>
+      </figure>
+      <ol>
+        <li><strong>字母</strong>：Na 的配位。O = 八面体，P = 三棱柱。</li>
+        <li><strong>数字</strong>：沿 c 轴，多少层 TMO<sub>2</sub> 构成一个重复单元。2 就是两层一循环，3 就是三层一循环。</li>
+      </ol>
+      <p>所以 <strong>O3</strong> 的完整意思是：钠在八面体里，晶胞里有 3 层过渡金属氧板；<strong>P2</strong> 是：钠在三棱柱里，晶胞里有 2 层过渡金属氧板。</p>
+    </section>
+
+    <section id="o3">
+      <h2>4. O3 型：ABCABC，高钠，适合能量</h2>
+      <p>O3 的氧堆积是密堆积序列 <strong>ABCABC</strong>。相邻氧层交错，钠层两侧的氧错开，围出八面体空隙。化学计量上常常接近 NaTMO<sub>2</sub>，也就是 <em>x ≈ 1</em>。和硬碳配对时，正极自己就能提供足够的钠。</p>
+      <figure>
+        <img src="images/03_o3_stacking.png" alt="O3 型侧视堆叠" />
+        <figcaption>图 5 · O3 侧视。金黄条带是钠层，青色条带是 TMO<sub>2</sub> 层。一个晶胞周期穿过三层 TM。</figcaption>
+      </figure>
+      <p>典型材料：NaNi<sub>1/3</sub>Fe<sub>1/3</sub>Mn<sub>1/3</sub>O<sub>2</sub>（常称 NFM）、NaNi<sub>0.5</sub>Mn<sub>0.5</sub>O<sub>2</sub>。优点是初始钠含量高、可逆容量潜力大。代价也很明确：</p>
+      <ul>
+        <li>扩散路径是 <strong>八面体 → 四面体 → 八面体</strong>，中间四面体和过渡金属面共享，静电挤，能垒高。</li>
+        <li>脱钠后容易发生层滑移，O3 → P3 等相变带来体积应变。</li>
+        <li>对空气敏感，容易吸水、吸二氧化碳，表面生成碱，浆料凝胶。</li>
+      </ul>
+    </section>
+
+    <section id="p2">
+      <h2>5. P2 型：ABBA，通道宽，适合功率</h2>
+      <p>P2 的氧堆积是 <strong>ABBA</strong>。钠层两侧的氧层重叠对齐，围出三棱柱。一个晶胞只有两层 TMO<sub>2</sub>。化学计量通常是 Na<sub>x</sub>TMO<sub>2</sub>，<em>x ≈ 2/3</em>。通道宽、层内二维网络连通，倍率往往更好，空气稳定性也相对更好。</p>
+      <figure>
+        <img src="images/04_p2_stacking.png" alt="P2 型侧视堆叠" />
+        <figcaption>图 6 · P2 侧视。注意钠层上下都是同一套氧位（BB 或 AA），虚线标出对齐关系。</figcaption>
+      </figure>
+      <p>典型材料：Na<sub>2/3</sub>Ni<sub>1/3</sub>Mn<sub>2/3</sub>O<sub>2</sub>、Na<sub>2/3</sub>Fe<sub>1/2</sub>Mn<sub>1/2</sub>O<sub>2</sub>。全电池里最大的短板是<strong>钠不够</strong>：正极一开始就缺约三分之一的钠，硬碳负极还会吃掉一部分不可逆钠，所以工业上常要补钠、预钠化，或做成 P2/O3 双相。</p>
+      <figure>
+        <img src="images/06_p2_na_sites.png" alt="P2 中 Nae 与 Naf 两种钠位" />
+        <figcaption>图 7 · P2 层内有两种三棱柱位。Nae 与 TMO<sub>6</sub> 共棱，静电更舒服，优先占据；Naf 与 TM 正对面共享，高钠时才大量占用。</figcaption>
+      </figure>
+    </section>
+
+    <section id="layers3d">
+      <h2>6. 把堆叠竖起来看</h2>
+      <p>侧视图适合数层，俯视的三维点阵适合体会“交错”和“对齐”。左边 O3：钠层上下的氧不在同一套格子上。右边 P2：钠层上下的氧叠在一起。</p>
+      <figure>
+        <img src="images/11_3d_layers.png" alt="O3 与 P2 三维点阵对比" />
+        <figcaption>图 8 · 红点氧、青点过渡金属、金点钠。这是教学示意，不是精确晶体学坐标。</figcaption>
+      </figure>
+    </section>
+
+    <section id="hop">
+      <h2>7. 扩散：O3 绕路，P2 直通</h2>
+      <p>离子传导快慢，看的是钠从一个稳定位点跳到下一个位点时，中间那个瓶颈有多窄、静电有多狠。</p>
+      <figure>
+        <img src="images/07_diffusion.png" alt="O3 与 P2 扩散能垒对比" />
+        <figcaption>图 9 · 左：O3 必须经过四面体过渡态。右：P2 经矩形窗口在三棱柱之间直跳，能垒通常更低。</figcaption>
+      </figure>
+      <div class="grid two">
+        <article>
+          <h3>O3 路径</h3>
+          <p>Oh → Td → Oh。四面体空隙小，并且常常和相邻 TMO<sub>6</sub> 面共享。钠半径又大，这段路走得费劲，所以纯 O3 的倍率普遍一般。</p>
+        </article>
+        <article>
+          <h3>P2 路径</h3>
+          <p>Prism → Prism。矩形窗口比三角形窗口大，层内三棱柱互相面共享，连成二维通道。这是 P2 倍率好的结构根源。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="phase">
+      <h2>8. 充电时层会滑</h2>
+      <p>脱钠等于抽走层间的“支柱”。空位多了，TMO<sub>2</sub> 板会相对滑动，氧堆积序列改写，配位环境跟着变。这就是相变。</p>
+      <figure>
+        <img src="images/08_phase_transition.png" alt="O3 与 P2 充电相变" />
+        <figcaption>图 10 · O3 家族常走 O3→P3；P2 家族在高电压常滑向 O2 或 OP4。相变带来应变、开裂和阻抗上升。</figcaption>
+      </figure>
+      <ul>
+        <li><strong>O3 → P3</strong>：层滑移后钠从八面体变成三棱柱，电压曲线上常出现平台或电压滞后。</li>
+        <li><strong>P2 → O2 / OP4</strong>：高电压下 c 轴剧烈收缩，容量掉得快。掺杂 Ti、Li、Mg，或故意引入局部堆垛层错，都是为了把这场滑移按住。</li>
+        <li><strong>P2/O3 双相</strong>：用 O3 补钠、用 P2 保动力学，是近年很常见的折中。</li>
+      </ul>
+    </section>
+
+    <section id="compare">
+      <h2>9. 一张表看完取舍</h2>
+      <figure>
+        <img src="images/09_compare.png" alt="O3 与 P2 对照表" />
+        <figcaption>图 11 · 能量密度优先看 O3，功率与循环优先看 P2。量产正极经常在两者之间做组分和相比例的微调。</figcaption>
+      </figure>
+      <figure>
+        <img src="images/12_poster.png" alt="钠电层状正极速记海报" />
+        <figcaption>图 12 · 速记海报：字母看笼子，数字看层数，O3 高钠，P2 快离子。</figcaption>
+      </figure>
+    </section>
+
+    <section id="period">
+      <h2>10. 为什么 O3 必须 3 层，P2 最少 2 层</h2>
+      <p>数字数的是：沿 c 轴走几块 <strong>TMO<sub>2</sub> 板</strong>，氧的横向落点才全部复位。密堆积平面里，氧只有三个落点，记作 A、B、C。相邻层换字母，氧错开，钠坐进八面体；相邻层字母相同，氧正对，钠坐进三棱柱。</p>
+      <figure>
+        <img src="images/20_abc_sites.png" alt="氧层 A B C 三个横向落点" />
+        <figcaption>图 13 · 俯视一层氧。三种颜色就是三种密堆积坐标。TMO<sub>2</sub> 板自己上下氧必须不同字母，因为 TM 也待在八面体里。</figcaption>
+      </figure>
+      <p>O 型要一直错开，落点必须绕 <strong>A→B→C</strong> 这个三角形。三角形有三条边，走完一圈正好三块 TMO<sub>2</sub>，氧序列写成 ABCABC。少走一层，字母停在 C，晶胞合不上，所以 as-synthesized 的八面体高钠相是 O3，没有稳定的“O1 高钠相”这条日常配方。</p>
+      <figure>
+        <img src="images/21_o3_three_steps.png" alt="O3 沿 A-B-C 三角形三步闭合" />
+        <figcaption>图 14 · O3 的最小闭合路径。每铺一层 TMO<sub>2</sub>，氧落点换一个顶点；第三层之后才回到 A。</figcaption>
+      </figure>
+      <p>P 型允许相邻氧层字母相同，于是路径从“绕三角形”变成“在两个顶点之间来回弹”。A 走到 B，钠层用 BB 对齐围成三棱柱；再从 B 走回 A，用 AA 对齐围成下一层三棱柱。两块 TMO<sub>2</sub> 就复位，氧序列写成 ABBA。再少一层只剩半个晶胞，所以 P 型的最短周期是 2。</p>
+      <figure>
+        <img src="images/22_p2_two_steps.png" alt="P2 在 A 与 B 之间两步闭合" />
+        <figcaption>图 15 · P2 的最小闭合路径。棱柱钠把上下氧锁成同一字母，折返一次就回家。</figcaption>
+      </figure>
+      <p>同一套 A/B/C 规则也生出亲戚相：P3 是棱柱钠但绕一圈三步（ABBCCA），常见于 O3 脱钠后的层滑移；O2 是八面体钠但两步闭合（ABAC），代价是 NaO<sub>6</sub> 与 TMO<sub>6</sub> 面共享，静电很挤，多半是 P2 高电压滑移产物，而不是合成态主力。</p>
+      <figure>
+        <img src="images/23_period_family.png" alt="P2 P3 O3 O2 周期家族" />
+        <figcaption>图 16 · 数字 = TMO<sub>2</sub> 板走完一圈的步数。2 和 3 都合法，取决于钠笼子是棱柱还是八面体，以及落点怎么换。</figcaption>
+      </figure>
+      <figure>
+        <img src="images/24_cannot_close.png" alt="O 型两步合不上，P 型两步刚好闭合" />
+        <figcaption>图 17 · 左边：八面体路径走两步还停在 C，缺 C→A。右边：棱柱路径在 A、B 之间折返，两步复位。</figcaption>
+      </figure>
+      <ul>
+        <li><strong>O3 的 3</strong>：错开堆积必须绕完 A-B-C 三角形。</li>
+        <li><strong>P2 的 2</strong>：对齐堆积只在两个落点间弹一次。</li>
+        <li>TM 层本身几乎总在八面体里，板的上下氧已经占用了“错开”这一步；真正决定 2 还是 3 的，是钠层两侧氧选同一字母还是换字母。</li>
+      </ul>
+    </section>
+
+    <section id="cft">
+      <h2>11. 配位场：ML<sub>6</sub> 八面体如何把 d 轨道劈成 t<sub>2g</sub> 和 e<sub>g</sub></h2>
+      <p>过渡金属正极里，TM 几乎总坐在六个氧围成的笼子中心。化学上写成 <strong>ML<sub>6</sub></strong>：M 是金属，L 是配体（这里是 O<sup>2-</sup>），六个配体沿笛卡尔轴 ±x、±y、±z 摆开，点群是 Oh。</p>
+      <figure>
+        <img src="images/25_ml6_octahedron.png" alt="ML6 八面体配位示意" />
+        <figcaption>图 18 · 中心青球是 M，六个红球是配体，分别钉在坐标轴两端。钠电正极里这就是 TMO<sub>6</sub>。</figcaption>
+      </figure>
+      <p>自由离子的 5 条 d 轨道能量相同。配体是负电荷，会排斥 d 电子云。排斥有多重，取决于轨道叶瓣<strong>正不正面朝配体</strong>。</p>
+      <figure>
+        <img src="images/26_d_orbitals.png" alt="五条 d 轨道形状：eg 与 t2g" />
+        <figcaption>图 19 · e<sub>g</sub> 两条叶瓣沿坐标轴；t<sub>2g</sub> 三条叶瓣指向轴与轴的夹缝，相对坐标轴转了 45°。</figcaption>
+      </figure>
+      <div class="grid two">
+        <article>
+          <h3>e<sub>g</sub>：正对配体，能量高</h3>
+          <p>d<sub>z<sup>2</sup></sub> 沿 z 轴，d<sub>x<sup>2</sup>-y<sup>2</sup></sub> 沿 x、y 轴。六个氧正好坐在这三根轴上，电子云和负电荷迎头相撞，静电最狠，轨道升。</p>
+        </article>
+        <article>
+          <h3>t<sub>2g</sub>：钻进夹缝，能量低</h3>
+          <p>dxy、dxz、dyz 的叶瓣指向 45°，躲开六个氧，电子云主要待在配体缝里，静电轻，轨道降。</p>
+        </article>
+      </div>
+      <figure>
+        <img src="images/27_pointing.png" alt="dx2-y2 正对氧与 dxy 躲进夹缝" />
+        <figcaption>图 20 · 俯视 xy 平面。左边 d<sub>x<sup>2</sup>-y<sup>2</sup></sub> 四个叶瓣正撞四个赤道氧；右边 dxy 四个叶瓣钻进氧与氧之间。</figcaption>
+      </figure>
+      <p>劈开之后仍要守住“重心”：两条 e<sub>g</sub> 各升 <strong>0.6 Δ<sub>o</sub></strong>，三条 t<sub>2g</sub> 各降 <strong>0.4 Δ<sub>o</sub></strong>。2×(+0.6) + 3×(−0.4) = 0。劈裂宽度 Δ<sub>o</sub>（也写 10Dq）就是配位场强。</p>
+      <figure>
+        <img src="images/28_octahedral_split.png" alt="八面体晶体场把 d 轨道劈成 t2g 和 eg" />
+        <figcaption>图 21 · 左边五条简并；右边劈成上面 eg、下面 t<sub>2g</sub>。箭头长度就是 Δ<sub>o</sub>。</figcaption>
+      </figure>
+      <p>电子往里填时，要比两件事：爬上 e<sub>g</sub> 要付 Δ<sub>o</sub>，同一条轨道再塞第二个电子要付成对能 P。</p>
+      <ul>
+        <li><strong>弱场 / 高自旋</strong>：Δ<sub>o</sub> &lt; P，先把五条轨道各放一个电子，再成对。氧化物里的 Mn、Fe 多半走这条。</li>
+        <li><strong>强场 / 低自旋</strong>：Δ<sub>o</sub> &gt; P，t<sub>2g</sub> 先成对填满，再上 e<sub>g</sub>。氰配合物、低自旋 Ni<sup>3+</sup> 走这条。</li>
+      </ul>
+      <figure>
+        <img src="images/29_hs_ls.png" alt="高自旋与低自旋以及和钠电的接头" />
+        <figcaption>图 22 · 氧是中等场，3d 金属在 TMO<sub>6</sub> 里常见高自旋。HS d<sup>4</sup> 的组态正好是 t<sub>2g</sub><sup>3</sup> e<sub>g</sub><sup>1</sup>，e<sub>g</sub> 上那一个电子就是下一节姜-泰勒的开关。</figcaption>
+      </figure>
+      <p>记号来源：t<sub>2g</sub>、e<sub>g</sub> 是 Oh 点群的不可约表示。t = 三重简并（三条），e = 二重简并（两条）；下标 g 表示轨道对反演是偶的。不必先背点群，记住“t 三条、e 两条、g 在中心对称笼子里”就够用。</p>
+    </section>
+
+    <section id="jt">
+      <h2>12. 姜-泰勒：eg 上多出一个电子，八面体就得变形</h2>
+      <p>上一节把五条 d 轨道劈成了 t<sub>2g</sub> 和 e<sub>g</sub>。规则八面体里，两条 e<sub>g</sub> 仍然简并。如果 e<sub>g</sub> 正好有 1 个电子，电子不知道该进哪条。晶体的办法是把八面体拉长或压扁：一条轨道降、一条轨道升，电子进更低的那条。这就是<strong>姜-泰勒效应</strong>（Jahn–Teller, JT）。</p>
+      <figure>
+        <img src="images/13_jt_origin.png" alt="姜-泰勒起源：eg 轨道劈裂" />
+        <figcaption>图 23 · 规则八面体里 e<sub>g</sub> 仍简并。出现 e<sub>g</sub><sup>1</sup> 后，拉长 z 轴让 d<sub>z<sup>2</sup></sub> 下降，单电子落进去。</figcaption>
+      </figure>
+      <figure>
+        <img src="images/14_jt_octahedra.png" alt="规则、拉长、压缩三种八面体" />
+        <figcaption>图 24 · 拉长：轴向 M–O 变长，赤道缩短。压缩则相反。高自旋 d<sup>4</sup> 最常见的是 z 轴拉长。</figcaption>
+      </figure>
+      <p>强 JT 离子的共同特征是 <strong>e<sub>g</sub> 上有单电子或单空穴</strong>：高自旋 d<sup>4</sup>（e<sub>g</sub><sup>1</sup>）、低自旋 d<sup>7</sup>（e<sub>g</sub><sup>1</sup>）、d<sup>9</sup>（e<sub>g</sub><sup>3</sup>）。e<sub>g</sub> 全空、半满或全满时，没有这种电子驱动力。</p>
+      <figure>
+        <img src="images/15_jt_ions.png" alt="钠电中各离子的姜-泰勒活性表" />
+        <figcaption>图 25 · 钠电正极里最常被点名的强 JT 离子：Mn<sup>3+</sup>、充电生成的 Fe<sup>4+</sup>、低自旋 Ni<sup>3+</sup>。</figcaption>
+      </figure>
+    </section>
+
+    <section id="fe4">
+      <h2>13. 为什么特别怕 Fe<sup>4+</sup> 和 Mn<sup>3+</sup></h2>
+      <p>两者都是高自旋 d<sup>4</sup>，组态 <strong>t<sub>2g</sub><sup>3</sup> e<sub>g</sub><sup>1</sup></strong>。差别在于它们什么时候出现。</p>
+      <figure>
+        <img src="images/16_fe4_cycle.png" alt="充放电把 Fe 和 Mn 推进姜-泰勒区" />
+        <figcaption>图 26 · 铁是充电造出 JT 离子；锰常常一开始就带着 JT 离子，放电还会把 Mn<sup>4+</sup> 还原回 Mn<sup>3+</sup>。</figcaption>
+      </figure>
+      <div class="grid two">
+        <article>
+          <h3>Mn<sup>3+</sup>：出生自带畸变</h3>
+          <p>NaMnO<sub>2</sub>、P2-Na<sub>2/3</sub>MnO<sub>2</sub> 含大量 Mn<sup>3+</sup>。相邻 TMO<sub>6</sub> 共享氧，一个八面体拉长，邻居必须跟着压缩，长程锁成单斜 O′3 或正交 P′2。钠扩散变成各向异性，循环中反复的协同畸变把颗粒撕开。</p>
+        </article>
+        <article>
+          <h3>Fe<sup>4+</sup>：充电才现身</h3>
+          <p>放电态 Fe<sup>3+</sup> 是高自旋 d<sup>5</sup>，e<sub>g</sub><sup>2</sup> 半满，JT 关着。一充电变成 Fe<sup>4+</sup>（d<sup>4</sup>），JT 突然打开。Fe<sup>4+</sup> 还极强氧化，容易把电子从氧上抽走，铁往四面体间隙迁移，电压滞后和不可逆容量一起出现。所以 NFM 不能无限制往高电压冲。</p>
+        </article>
+      </div>
+      <p>伤循环的是<strong>协同姜-泰勒</strong>：整层八面体按同一套长短轴咬合，六方对称被压成正交 / 单斜，c 轴和面内同时应变。</p>
+      <figure>
+        <img src="images/17_cooperative.png" alt="协同姜-泰勒与掺杂打断" />
+        <figcaption>图 27 · 左：纯 Mn<sup>3+</sup>/Fe<sup>4+</sup> 骨架，长短轴互相咬合。右：插入不畸变的 Ti/Mg，协同链被剪断。</figcaption>
+      </figure>
+    </section>
+
+    <section id="dope">
+      <h2>14. 掺杂为什么能挡住姜-泰勒</h2>
+      <p>掺杂办两件事：少制造 e<sub>g</sub><sup>1</sup> 离子，再让剩下的畸变无法对齐。论文里常见的 Ti、Mg、Li、Al、Cu、Zn，走的是同一套逻辑。</p>
+      <figure>
+        <img src="images/18_doping.png" alt="掺杂抑制姜-泰勒的六条路径" />
+        <figcaption>图 28 · 六条经常叠在一起用的路径。一种掺杂往往同时做其中两三件事。</figcaption>
+      </figure>
+      <ol>
+        <li><strong>稀释</strong>：把 Mn<sup>3+</sup> / Fe<sup>4+</sup> / Ni<sup>3+</sup> 的浓度压到协同阈值以下。单个八面体仍可局部歪，宏观 XRD 却回到六方。</li>
+        <li><strong>抬价</strong>：掺 Mg<sup>2+</sup>、Li<sup>+</sup> 这类低价离子，为保持电中性，锰更倾向 Mn<sup>4+</sup>（d<sup>3</sup>，t<sub>2g</sub><sup>3</sup> e<sub>g</sub><sup>0</sup>）。e<sub>g</sub> 空了，JT 电子驱动力直接关掉。</li>
+        <li><strong>钉氧</strong>：Ti–O、Al–O 比 Mn<sup>3+</sup>–O 更短、更硬。共享氧被钉住，八面体想沿 z 轴拉长也拉不开。</li>
+        <li><strong>半径失配</strong>：掺杂离子和主体半径对不上，畸变相位无法长程锁死。P′2 / O′3 退回 P2 / O3。</li>
+        <li><strong>电荷无序</strong>：Ni/Fe/Mn 三元混排带来价态涨落，电子定不成条纹，协同 JT 更难成核。</li>
+        <li><strong>堵住迁移</strong>：Fe<sup>4+</sup> 喜欢钻四面体。惰性离子占住关键位点，抑制不可逆阳离子重排。</li>
+      </ol>
+      <p>所以你会在配方里反复看到：锰基层掺 Ti/Mg/Li/Cu；铁锰镍做成 NFM 混排；高电压窗口被故意收窄，避免一次造出太多 Fe<sup>4+</sup>。掺杂的目标是压住协同畸变和相变，让宏观骨架回到六方。</p>
+      <figure>
+        <img src="images/19_jt_poster.png" alt="姜-泰勒速记海报" />
+        <figcaption>图 29 · 速记：e<sub>g</sub><sup>1</sup> 才 JT；钠电主角是 Mn<sup>3+</sup> 和 Fe<sup>4+</sup>；协同才致命；掺杂是少造、再剪断。</figcaption>
+      </figure>
+    </section>
+
+    <section id="script">
+      <h2>15. 图是怎么画出来的</h2>
+      <p>全部插图由 Python 脚本生成，依赖 <code>matplotlib</code> 与 <code>numpy</code>。脚本在当前工作区的 <code>scripts/draw_sib_structures.py</code>，图片输出到 <code>web/images/</code>。</p>
+      <pre><code>python3 scripts/draw_sib_structures.py</code></pre>
+      <p>脚本里八面体用 (±1,0,0)、(0,±1,0)、(0,0,±1) 六个顶点；三棱柱用上下两个等边三角形沿 z 方向拉开。O3 / P2 侧视图用错位圆点表示 ABC 或 AB 氧位，金黄条带标出钠层。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>教学示意，用于理解 Delmas 记号、配位场劈裂、配位几何与姜-泰勒。精确键长、空间群、电子组态请对照 XRD / XAS / DFT 结果。</p>
+  </footer>
+</body>
+</html>
