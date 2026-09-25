@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 钠电层状正极：化学视角</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <p class="kicker">钠离子电池 · 2026 文献 · 层状氧化物正极</p>
+    <h1>层状正极的化学账本</h1>
+    <p class="lead">容量是电子从哪里抽出来，寿命是骨架能不能把形变弹回去，空气稳定性是表面残碱会不会把浆料吃掉。2026 年的论文把这三本账写清楚了：钉氧、剪协同、锁层滑、把 O 2p 关进可逆窗口。</p>
+    <nav class="toc">
+      <a href="index.html">结构入门</a>
+      <a href="#map">文献地图</a>
+      <a href="#redox">氧化还原</a>
+      <a href="#highv">高电压坍塌</a>
+      <a href="#entropy">构型熵</a>
+      <a href="#core">O3@P2</a>
+      <a href="#lock">双相互锁</a>
+      <a href="#bond">Al/Ti 钉氧</a>
+      <a href="#anion">阴离子双参数</a>
+      <a href="#oxygen">氧氧化还原</a>
+      <a href="#spinel">尖晶石</a>
+      <a href="#air">残碱</a>
+      <a href="#cascade">相变瀑布</a>
+      <a href="#radar">策略雷达</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="map">
+      <h2>1. 2026 年在研究什么</h2>
+      <p>层状正极通式仍是 <strong>Na<sub>x</sub>TMO<sub>2</sub></strong>。Delmas 记号没变：O 是八面体钠、P 是三棱柱钠，数字是 TMO<sub>2</sub> 板的重复周期。变的是化学处方。单相 O3 容量高、空气差、高电压会滑；单相 P2 通道宽、天生缺钠、高电压会缩成 O2。2026 年的主流答案是把电荷补偿、M–O 键合和层滑移当成同一套耦合问题来改。</p>
+      <figure>
+        <img src="images/30_lit_map_2026.png" alt="2026 钠电层状正极文献地图" />
+        <figcaption>图 1 · 七个化学问题对应七组 2026 文献。主线是改写电荷补偿、键合与层滑移的耦合。</figcaption>
+      </figure>
+      <p>下面按化学逻辑走：先问电子从谁身上抽，再问骨架如何坏，最后看 2026 年怎样修。</p>
+    </section>
+
+    <section id="redox">
+      <h2>2. 电荷补偿阶梯：谁在给电子</h2>
+      <p>充电是抽电子。抽谁，决定容量；抽完骨架歪不歪，决定寿命。钠电层状正极里，电子按电压从低到高大致走这条阶梯。</p>
+      <figure>
+        <img src="images/31_redox_ladder.png" alt="层状正极电荷补偿阶梯" />
+        <figcaption>图 2 · 电压轴上的氧化还原阶梯。Ni 给平台，Fe 给容量也给姜-泰勒，Mn 给骨架，晶格氧给额外容量也给 O<sub>2</sub> 逸出的入口。</figcaption>
+      </figure>
+      <div class="grid two">
+        <article>
+          <h3>阳离子氧化还原</h3>
+          <p>Ni<sup>2+</sup>/Ni<sup>3+</sup>/Ni<sup>4+</sup> 是主力电压平台。Fe<sup>3+</sup>（高自旋 d<sup>5</sup>）充电变成 Fe<sup>4+</sup>（d<sup>4</sup>，t<sub>2g</sub><sup>3</sup> e<sub>g</sub><sup>1</sup>），姜-泰勒开关被打开。Mn<sup>3+</sup> 同样是高自旋 d<sup>4</sup>，经常出生就带着畸变；Mn<sup>4+</sup> 是 d<sup>3</sup>，t<sub>2g</sub><sup>3</sup> 半满，是稳定柱。</p>
+        </article>
+        <article>
+          <h3>阴离子氧化还原</h3>
+          <p>高电压下 O 2p 价带顶靠近费米能级，晶格氧开始丢电子。空穴被邻近 TM 钉住时，过氧对可逆；空穴离域时，O<sub>2</sub> 逸出、TM 迁入钠层，表面变成岩盐死层。2026 年的策略是调 O 2p 能级，把这段容量关进可逆窗口。</p>
+        </article>
+      </div>
+      <p>Ti<sup>4+</sup>、Al<sup>3+</sup>、Mg<sup>2+</sup>、Zr<sup>4+</sup> 几乎不贡献容量。它们的工作是钉氧、撑层、剪协同、挡住 Fe 往四面体间隙跑。</p>
+    </section>
+
+    <section id="highv">
+      <h2>3. 4.0 V 多出来的容量，买的是一次层间重构</h2>
+      <p>Dalhousie 组 2026 年把 O3 型 NaMn<sub>0.39</sub>Fe<sub>0.31</sub>Ni<sub>0.22</sub>Zn<sub>0.08</sub>O<sub>2</sub> 软包做到 4.0 V。3.8 V 切到 3.9、4.0 V，首周容量升高，循环迅速掉下去。等温微量热、超高精度库仑和微区 XRF 把电解液寄生反应排除出主因。原位 / 非原位 XRD 给出结构答案：反复冲到 4.0 V，晶体长出八面体 / 三棱柱杂化相，c 轴坍塌，可逆性被锁死。</p>
+      <figure>
+        <img src="images/32_highV_collapse.png" alt="3.8 V 可逆骨架与 4.0 V c 轴坍塌" />
+        <figcaption>图 3 · Ye et al., J. Electrochem. Soc. 2026, 173, 010506。左：3.8 V 截止，O3 骨架可逆。右：4.0 V 诱导 O/P 杂化，c 轴缩短。</figcaption>
+      </figure>
+      <p>化学读法：高电压把 Fe<sup>3+</sup> 推成 Fe<sup>4+</sup>，同时把 O 2p 空穴打开。层间钠柱被抽空，TMO<sub>2</sub> 板相对滑动，氧堆积从纯 ABC 变成局部棱柱混排。c 轴一塌，后续钠进出的通道几何就变了。</p>
+    </section>
+
+    <section id="entropy">
+      <h2>4. 构型熵：把有序条纹改写成化学噪声</h2>
+      <p>Na<sup>+</sup>/空位有序和协同姜-泰勒都需要长程相位对齐。同一套八面体格点上混入半径、价态、M–O 共价性都不同的离子，超结构被打散，畸变相位对不齐，电子态被局域化，氧更不容易成对逸出。</p>
+      <figure>
+        <img src="images/33_entropy_mix.png" alt="低熵有序与高熵无序的 TM 层对比" />
+        <figcaption>图 4 · 左：低熵条纹，有序与协同 JT 易成核。右：中/高熵混排。样本：Topal et al., RSC Adv. 2026 高熵 O3-NaTi<sub>0.2</sub>Mn<sub>0.2</sub>Fe<sub>0.2</sub>Ni<sub>0.2</sub>Co<sub>0.2</sub>O<sub>2</sub>（~1.6 R，120 mAh g<sup>−1</sup> @ C/3）；Liu et al., ACS AMI 2026 非等摩尔八元中熵 O3/P2。</figcaption>
+      </figure>
+      <p>高熵氧化物里，Co<sup>3+</sup>、Fe<sup>3+</sup>、Ni<sup>2+</sup> 贡献容量，Mn<sup>4+</sup> 做结构形成离子，Ti<sup>4+</sup> 钉骨架。构型熵给出的是统计上的无序，真正起化学作用的仍是每一类离子的价态和键合。</p>
+    </section>
+
+    <section id="core">
+      <h2>5. O3@P2：棱柱外壳给八面体内核穿铠甲</h2>
+      <p>O3 的 x ≈ 1，全电池不缺钠，首周库仑效率高。P2 的三棱柱窗口宽，空气稳定性更好。Su 与 Chou 组用混合熵加阳离子势，在 O3 基体上外延生长 P2 晶域：内核 NaNi<sub>0.4</sub>Mg<sub>0.05</sub>Cu<sub>0.05</sub>Mn<sub>0.3</sub>Ti<sub>0.2</sub>O<sub>2</sub>，外壳 Na<sub>0.44</sub>Mn<sub>0.8</sub>Mg<sub>0.2</sub>O<sub>2</sub>。</p>
+      <figure>
+        <img src="images/34_o3p2_core_shell.png" alt="O3@P2 核壳结构示意" />
+        <figcaption>图 5 · Su, Chou et al., Chemical Science, 13 Aug 2026。0.1 C 可逆容量 157.7 mAh g<sup>−1</sup>，10 C 仍有 78.3 mAh g<sup>−1</sup>。表面 P2 晶域缓解 O3 的机械应力。</figcaption>
+      </figure>
+      <p>P2 外壳办三件事：矩形窗口降低近表面扩散垒；隔开 H<sub>2</sub>O / CO<sub>2</sub>；外延共格约束把 O3 的层滑矢量卡住。这是按阳离子势长出来的晶域，和 O3 一起呼吸。</p>
+    </section>
+
+    <section id="lock">
+      <h2>6. 互锁双相：O3 相压在 20% 以下</h2>
+      <p>P2 板要滑成 O2，必须整层平移。嵌在旁边的 O3 板平移矢量不同，界面错配能把滑移按住。这就是互锁。</p>
+      <figure>
+        <img src="images/35_interlock_p2o3.png" alt="P2/O3 原子尺度互锁" />
+        <figcaption>图 6 · Li et al., ACS Energy Letters, 8 Sep 2026：DFT 给出双相热力学边界，钠富 O3 限制在 20% 以下可做到近零应变。Kang et al., J. Energy Chem. 2026：Na<sub>0.7</sub>Mn<sub>0.65−x</sub>Cu<sub>x</sub>Ni<sub>0.3</sub>Li<sub>0.05</sub>O<sub>2</sub> 最优相比例 82.45% P2 + 17.55% O3，Cu 同时增强 d–p 耦合。</figcaption>
+      </figure>
+      <p>两条定量边界值得记下：O3 太多，高钠相的复杂相变会重新主导；O3 太少，全电池又回到 P2 缺钠的老问题。20% 附近是 2026 年算出来的折中点。</p>
+    </section>
+
+    <section id="bond">
+      <h2>7. Al/Ti 键合工程：稀释、钉氧、弹簧</h2>
+      <p>NFM（NaNi<sub>1/3</sub>Fe<sub>1/3</sub>Mn<sub>1/3</sub>O<sub>2</sub>）量产友好，短板是不可逆相变和慢扩散。Hou 等把 6% 的 TM 换成 Al<sub>0.03</sub>Ti<sub>0.03</sub>。</p>
+      <figure>
+        <img src="images/36_alti_bonding.png" alt="Al/Ti 共掺对八面体几何的影响" />
+        <figcaption>图 7 · Hou et al., ACS Appl. Mater. Interfaces 2026, 18, 20514。Al<sup>3+</sup>（d<sup>0</sup>）不姜-泰勒，Al–O 短而硬，协同链被剪断。Ti–O 强共价，层间距被撑开，相变应力被弹回去。10 C 容量 102.4 mAh g<sup>−1</sup>。</figcaption>
+      </figure>
+      <p>更强的 Al–O、Ti–O 键把过渡金属框架钉住，深脱钠时氧更不容易被抽走。层间距扩大后，Na<sup>+</sup> 扩散垒下降。两种掺杂叠在一起：Al 管姜-泰勒，Ti 管相变应力。</p>
+    </section>
+
+    <section id="anion">
+      <h2>8. 阴离子掺杂：价电子构型 × 离子半径</h2>
+      <p>阳离子掺杂的经验已经很多。阴离子坐进氧位，规则一直含糊。兰州大学拜永孝组以 O3-Na(NiFeMn)<sub>1/3</sub>O<sub>2</sub> 为模型，给出双参数准则。</p>
+      <figure>
+        <img src="images/37_anion_dual.png" alt="阴离子掺杂双参数决策表" />
+        <figcaption>图 8 · Bai et al., Advanced Materials, 22 Aug 2026。半径先匹配 O<sup>2−</sup>（~1.40 Å），再看电子角色。F<sup>−</sup> 是给体，补给 Fe<sup>3+</sup>，抑制 Fe<sup>4+</sup>；N<sup>3−</sup> 是受体，从 Ni<sup>2+</sup> 抽电子。Cl<sup>−</sup> / Br<sup>−</sup> 太大，B<sup>3−</sup> 双重失配。</figcaption>
+      </figure>
+      <div class="grid two">
+        <article>
+          <h3>F<sup>−</sup> 为什么有效</h3>
+          <p>半径匹配氧位。作为电子给体，优先把电子补给高氧化态 Fe<sup>3+</sup>，Fe<sup>4+</sup> 少了，姜-泰勒弱了。局部负电荷还排斥碳酸根，空气稳定性一起变好。</p>
+        </article>
+        <article>
+          <h3>N / Cl / Br / B 为什么翻车</h3>
+          <p>N<sup>3−</sup> 从 Ni<sup>2+</sup> 抢电子，助长 Ni<sup>3+</sup>，高电压副反应加速。Cl<sup>−</sup>、Br<sup>−</sup> 半径过大，脱钠时相偏析。B<sup>3−</sup> 半径和构型都对不上，原子会跨层振荡。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="oxygen">
+      <h2>9. 氧阴离子氧化还原：额外容量的开关</h2>
+      <p>P2-Na<sub>0.67</sub>Ni<sub>0.33</sub>Mn<sub>0.67</sub>O<sub>2</sub> 理论容量约 173 mAh g<sup>−1</sup>，高电压段一部分来自晶格氧。问题是这段容量经常不可逆：空穴离域，O<sub>2</sub> 跑掉，体积应变大。</p>
+      <figure>
+        <img src="images/38_oxygen_redox.png" alt="O 2p 与 TM 3d 能级及可逆性" />
+        <figcaption>图 9 · 高电压抽电子时，先抽 TM 3d 还是 O 2p，取决于电荷转移能隙。IEC Res. 2026：K/Cu/Zr 共掺（NKNCMZ）调 O 2p 价带并增强电子局域化，体积应变 1.23% → 0.45%，1500 mA g<sup>−1</sup> 循环 800 圈保持 78.6%。</figcaption>
+      </figure>
+      <p>化学图像：K<sup>+</sup> 撑钠层，Cu 改 d–p 杂化，Zr<sup>4+</sup> 钉氧。O 2p 空穴被局域化，过氧对在放电时还能把电子还回去。同一年还有氧轨道调谐、Br 触发阴离子氧化还原、四配位硼抑制晶格氧逸出等平行路线，目标相同：让氧给容量，不让氧拆骨架。</p>
+    </section>
+
+    <section id="spinel">
+      <h2>10. 层状 / 尖晶石：三维通道当支柱</h2>
+      <p>尖晶石 AB<sub>2</sub>O<sub>4</sub> 有三维扩散通道，机械上更抗滑。氧密堆积骨架可以和层状共格，TM 占据从层状八面体扩到尖晶石的 8a / 16d。Zhu / Xiao 等 2026 年综述把做法归纳成体相复合、表面亚层、完整包覆三条。</p>
+      <figure>
+        <img src="images/39_spinel_hetero.png" alt="层状与尖晶石异质结" />
+        <figcaption>图 10 · 尖晶石负责三件事：挡住不可逆相变、挡住空气腐蚀、给 Na<sup>+</sup> 开近表面快通道。</figcaption>
+      </figure>
+    </section>
+
+    <section id="air">
+      <h2>11. 残碱：O3 的空气化学是表面问题</h2>
+      <p>O3 吸水生成 NaOH，再吸 CO<sub>2</sub> 变成 Na<sub>2</sub>CO<sub>3</sub> / NaHCO<sub>3</sub>。残碱吃 PVDF，浆料凝胶，循环中 CEI 增厚、颗粒边缘被蚀刻。这和体相掺杂是两件事。</p>
+      <figure>
+        <img src="images/40_air_surface.png" alt="残碱生成路径与丙二酸中和" />
+        <figcaption>图 11 · Xie et al., J. Power Sources 2026, 681, 240294。浆料混合时加 0.3 wt% 丙二酸，XPS 证实残碱消失、丙酸钠膜生成。NFM111 在 2.0–4.0 V、120 圈：保持率 79% → 89%；2 C 容量 95 → 110 mAh g<sup>−1</sup>。循环后 XRD 体相不变，改善来自表面。</figcaption>
+      </figure>
+    </section>
+
+    <section id="cascade">
+      <h2>12. NM55 的相变瀑布：低 SOC 畸变，高 SOC 两相</h2>
+      <p>上海科技大学 2026 年用高精度透射式原位 XRD 把 O3-NaNi<sub>0.5</sub>Mn<sub>0.5</sub>O<sub>2</sub> 的相变逐格拆开：O3 → O′3 → P′3 → P3 → P′3′ → P3′ → O3′ / O3′′。此前文献里含糊的中间相被标定清楚。</p>
+      <figure>
+        <img src="images/41_nm55_cascade.png" alt="NM55 充电相变瀑布" />
+        <figcaption>图 12 · 结构破坏分成两段。低 SOC：多重单斜 + Na<sup>+</sup>/空位有序，Fe 抑制畸变，Ti 关掉单斜相。高 SOC：O3′/O3′′ 两相失配，Fe 把两相改成 OP2 固溶，Ca<sup>2+</sup> 蹲在钠层当支柱。NFM424-Ti2.5Ca2 全电池 1 C / 600 圈：24% → 70%。</figcaption>
+      </figure>
+      <p>处方和前面几节对得上：低电压段打的是姜-泰勒和有序化，高电压段打的是层滑和晶格失配。Ca<sup>2+</sup> 半径接近 Na<sup>+</sup>，适合做层间惰性支柱。</p>
+    </section>
+
+    <section id="radar">
+      <h2>13. 策略雷达与设计闭环</h2>
+      <p>把容量、倍率、循环、空气、高电压可逆、成本六项摊开：纯 O3-NFM 容量和成本好，循环与空气弱；纯 P2-NNM 倍率好，容量和高压可逆弱。2026 年熵 + 双相 + 钉氧把短板往中间拉。</p>
+      <figure>
+        <img src="images/42_strategy_radar.png" alt="O3、P2 与 2026 综合策略雷达图" />
+        <figcaption>图 13 · 示意对比。橙色轮廓是熵调控、双相互锁与钉氧叠在一起之后的均衡形态。</figcaption>
+      </figure>
+      <figure>
+        <img src="images/43_poster_2026.png" alt="2026 层状正极化学速记海报" />
+        <figcaption>图 14 · 设计闭环：选氧化还原窗口 → 钉氧 → 剪协同 → 锁层滑 → 清表面。口诀：少造 e<sub>g</sub><sup>1</sup>，钉住氧，卡住层，洗净碱。</figcaption>
+      </figure>
+    </section>
+
+    <section id="refs">
+      <h2>14. 2026 文献锚点</h2>
+      <ol>
+        <li>Ye, Z.; Dahn, J. R.; Metzger, M. et al. <em>J. Electrochem. Soc.</em> <strong>2026</strong>, 173, 010506. O3 高电压 O/P 杂化与 c 轴坍塌。</li>
+        <li>Su, Y.; Chou, S. et al. <em>Chem. Sci.</em> <strong>2026</strong>, DOI: 10.1039/d6sc04933h. 混合熵 O3@P2 外延。</li>
+        <li>Hou, Z.; Wei, W. et al. <em>ACS Appl. Mater. Interfaces</em> <strong>2026</strong>, 18, 20514. Al/Ti 共掺钉氧。</li>
+        <li>Bai, Y. et al. <em>Adv. Mater.</em> 22 Aug <strong>2026</strong>. NFM 阴离子掺杂双参数准则。</li>
+        <li>Kang, W.; Xiong, S. et al. <em>J. Energy Chem.</em> <strong>2026</strong>. P2/O3 互锁与 d–p 耦合。</li>
+        <li>Li, L.; Yu, Y. et al. <em>ACS Energy Lett.</em> 8 Sep <strong>2026</strong>. 原子级共生长，O3 &lt; 20% 近零应变。</li>
+        <li>Xie, D.; Kendrick, E. et al. <em>J. Power Sources</em> <strong>2026</strong>, 681, 240294. 丙二酸一步清残碱。</li>
+        <li><em>Ind. Eng. Chem. Res.</em> <strong>2026</strong>, 65, 9462. K/Cu/Zr 调 O 2p，体积应变 1.23% → 0.45%。</li>
+        <li>Topal, A. et al. <em>RSC Adv.</em> <strong>2026</strong>, 16, 28366. 高熵 O3-NaTi<sub>0.2</sub>Mn<sub>0.2</sub>Fe<sub>0.2</sub>Ni<sub>0.2</sub>Co<sub>0.2</sub>O<sub>2</sub>。</li>
+        <li>Liu, M.; Liu, Y. et al. <em>ACS Appl. Mater. Interfaces</em> 1 Aug <strong>2026</strong>. 非等摩尔八元中熵 O3/P2。</li>
+        <li>Zhu, Y.-F.; Xiao, Y. et al. 层状/尖晶石异质结综述，<strong>2026</strong>。</li>
+        <li>陈志鹏. 高电压钠离子电池层状正极材料开发及机理研究. 上海科技大学，<strong>2026</strong>。</li>
+      </ol>
+    </section>
+
+    <section id="script">
+      <h2>15. 图怎么画</h2>
+      <p>全部插图由 Python（matplotlib + numpy）生成，脚本在当前工作区的 <code>scripts/draw_sib_2026.py</code>，输出到 <code>images/</code>。</p>
+      <pre><code>python3 scripts/draw_sib_2026.py</code></pre>
+      <p>结构几何与晶体场基础见 <a href="index.html">O3 / P2 / 姜-泰勒入门页</a>。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>教学综述，数字引自 2026 年论文摘要与公开报道。精确相图、键长与电子结构请对照原文 XRD / XAS / DFT。</p>
+  </footer>
+</body>
+</html>
